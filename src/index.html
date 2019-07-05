@@ -13,30 +13,38 @@
 
     <button id="search" type="button" name="button">SEARCH</button>
 
+<div class="container">
+
 <script id="profileTemplate" type="text/template">
-  <div id="profile" >
-    <div class="showFname"> {{firstName}}</div>
-    <div class="showLname">{{lastName}}</div>
+  <div id="profile"class="head " >
+    <div class="showFname">First Name: {{firstName}}</div>
+    <div class="showLname">Last Name: {{lastName}}</div>
   </div>
 </script>
 
 <script id="practiceTemplate" type="text/template">
-  <div id="profile" >
-    <div class="website">{{website}}</div>
-    <div class="street">{{street}}</div>
-    <div class="city">{{city}}</div>
-    <div class="state">{{state}}</div>
-    <div class="zip">{{zip}}</div>
-    <div class="phone">{{phone}}</div>
+  <div id="practice" >
+    <div class="website">Website: {{website}}</div>
+    <div class="street">Address: {{street}}</div>
+    <div class="city">City: {{city}}</div>
+    <div class="state">State: {{state}}</div>
+    <div class="zip">Zip: {{zip}}</div>
     <div class="accepting">{{accepting}}</div>
+  </div>
+</script>
+
+<script id="phoneTemplate" type="text/template">
+  <div id="phone" >
+    <div class="phone">{{PhoneType}}:{{phone}}</div>
   </div>
 </script>
 
 <div id="displayName" class="">
 
 </div>
+</div>
 
 
 <div id="no-results" style="display:none"> <h3>Sorry, there are no doctor's that meet your criteria in your area.</h3> </div>
-  </body>
+</body>
 </html>
