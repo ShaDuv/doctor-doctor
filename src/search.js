@@ -1,5 +1,5 @@
-const apiKey = process.env.API_KEY
 
+const apiKey = process.env.API_KEY
 
 export class DoctorSearch {
   getDoctorByName(name) {

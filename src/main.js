@@ -1,4 +1,6 @@
 import $ from 'jquery';
+import { DoctorSearch } from "./search.js"
+
 $(document).ready(function() {
   $('#search').click(function() {
     let name = $('#name').val();
@@ -8,9 +10,9 @@ $(document).ready(function() {
 
 
     let doctorSearch = new DoctorSearch();
-    let nameSearchResult = searchResults.getDoctorByName(name);
-    let symptomSearchResult = searchResults.getDoctorBySymptom(symptom);
-
+    let nameSearchResult = doctorSearch.getDoctorByName(name);
+    // let symptomSearchResult = searchResults.getDoctorBySymptom(symptom);
+    console.log(nameSearchResult);
     promise.then(function(response) {
       body = JSON.parse(response);
       // $('.showHumidity').text(`The humidity in ${city} is ${body.main.humidity}%`);
