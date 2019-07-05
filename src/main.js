@@ -12,12 +12,10 @@ $(document).ready(function() {
     let doctorSearch = new DoctorSearch();
     let nameSearchResult = doctorSearch.getDoctorByName(name)
     // let symptomSearchResult = searchResults.getDoctorBySymptom(symptom);
-    const apiKey = process.env.API_KEY;
-    console.log(apiKey);
     nameSearchResult.then(function(response) {
       body = JSON.parse(response);
-      // $('.showHumidity').text(`The humidity in ${city} is ${body.main.humidity}%`);
-      // $('.showTemp').text(`The temperature in Kelvins is ${body.main.temp} degrees.`);
+      $('.showdoc').text(`${body.main.humidity}%`);
+      $('.showTemp').text(`The temperature in Kelvins is ${body.main.temp} degrees.`);
     }, function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error.message}`);
     });
