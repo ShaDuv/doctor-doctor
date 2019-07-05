@@ -16,13 +16,25 @@
 <script id="profileTemplate" type="text/template">
   <div id="profile" >
     <div class="showFname"> {{firstName}}</div>
-    <div class="showLname">{{lastNamee}}</div>
-    <div class="website">{{website}}</div>
-    <div class="location">{{location}}</div>
-    <div class="phone">{{phone}}</div>
-    <div class="accepting-patients">{{accepting}}</div>
+    <div class="showLname">{{lastName}}</div>
   </div>
 </script>
+
+<script id="practiceTemplate" type="text/template">
+  <div id="profile" >
+    <div class="website">{{website}}</div>
+    <div class="street">{{street}}</div>
+    <div class="city">{{city}}</div>
+    <div class="state">{{state}}</div>
+    <div class="zip">{{zip}}</div>
+    <div class="phone">{{phone}}</div>
+    <div class="accepting">{{accepting}}</div>
+  </div>
+</script>
+
+<div id="displayName" class="">
+
+</div>
 
 
 <div id="no-results" style="display:none"> <h3>Sorry, there are no doctor's that meet your criteria in your area.</h3> </div>
