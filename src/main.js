@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { DoctorSearch } from "./search.js"
+import { DoctorSearch } from './search.js';
 
 $(document).ready(function() {
   $('#search').click(function() {
@@ -10,12 +10,14 @@ $(document).ready(function() {
 
 
     let doctorSearch = new DoctorSearch();
-    let nameSearchResult = doctorSearch.getDoctorByName(name)
-    // let symptomSearchResult = searchResults.getDoctorBySymptom(symptom);
+    let nameSearchResult = doctorSearch.getDoctorByName(name);
     nameSearchResult.then(function(response) {
-      body = JSON.parse(response);
-      $('.showdoc').text(`${body.main.humidity}%`);
-      $('.showTemp').text(`The temperature in Kelvins is ${body.main.temp} degrees.`);
+      let body = JSON.parse(response);
+      console.log(nameSearchResult);
+      for (var i = 0; i < body.data.practices.length; i++) {
+        array[i]
+      }
+
     }, function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error.message}`);
     });
