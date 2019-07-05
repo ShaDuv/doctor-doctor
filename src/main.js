@@ -6,7 +6,6 @@ import { DoctorProfile } from './doctor_profile.js';
 
 
 $(document).ready(function() {
-  $('#no-results').hide();
   $('#search').click(function() {
     let name = $('#name').val();
     let symptom = $('#symptom').val();
@@ -19,7 +18,6 @@ $(document).ready(function() {
     nameSearchResult.then(function(response) {
       let body = JSON.parse(response);
       if (body.meta.total == 0) {
-        console.log(body.meta);
         $('#profile').hide();
         $('#no-results').show();
       };
