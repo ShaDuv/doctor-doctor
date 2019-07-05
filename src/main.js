@@ -26,6 +26,10 @@ $(document).ready(function() {
 
         $('.showFname').text(profile.firstName);
         $('.showLname').text(profile.lastName);
+        $('.website').text(practices.website);
+        $('.location').text(profile.lastName);
+        $('.accepting-patients').text(profile.lastName);
+        $('.phone').text(profile.lastName);
       }
 
     }, function(error) {
