@@ -21,13 +21,17 @@ $(document).ready(function() {
         $('#profile').hide();
         $('#no-results').show();
       };
-      for (var i = 0; i < body.data.length; i++) {
+      body.data.length.forEach(){
         let profile = new DoctorProfile(body.data[i]);
 
         $('.showFname').text(profile.firstName);
-        $('.showLname').text(profile.lastName);
-        $('.website').text(profile.practice[0].website);
-        console.log(profile.practice)
+        $('.showLname').text(profile.lastName);};
+
+        for (var p = 0; p < profile.practice.length; p++) {
+          let practice = profile.practice[p];
+          $('.website').text(practice.website);
+
+        }
         // $('.location').text(profile.lastName);
         // $('.accepting-patients').text(profile.lastName);
         // $('.phone').text(profile.lastName);
