@@ -12,16 +12,19 @@
     <input id="symptom" type="text" name="" value="">
 
     <button id="search" type="button" name="button">SEARCH</button>
-<div id="profile">
-  <div class="showFname"></div>
-  <div class="showLname"></div>
-  <div class="website"></div>
-  <div class="location"></div>
-  <div class="phone"></div>
-  <div class="accepting-patients"></div>
+
+<script id="profileTemplate" type="text/template">
+  <div id="profile" >
+    <div class="showFname"> {{firstName}}</div>
+    <div class="showLname">{{lastNamee}}</div>
+    <div class="website">{{website}}</div>
+    <div class="location">{{location}}</div>
+    <div class="phone">{{phone}}</div>
+    <div class="accepting-patients">{{accepting}}</div>
+  </div>
+</script>
 
 
-</div>
 <div id="no-results" style="display:none"> <h3>Sorry, there are no doctor's that meet your criteria in your area.</h3> </div>
   </body>
 </html>

@@ -12,6 +12,8 @@ $(document).ready(function() {
     $('#name').val("");
     $('#symptom').val("");
 
+    const profileTemplate = document.getElementById("profileTemplate").innerHTML;
+    let profileDisplay = '';
 
     let doctorSearch = new DoctorSearch();
     let nameSearchResult = doctorSearch.getDoctorByName(name, symptom);
@@ -21,11 +23,12 @@ $(document).ready(function() {
         $('#profile').hide();
         $('#no-results').show();
       };
-      body.data.length.forEach(){
+      for (var i = 0; i < body.data.length; i++) {
         let profile = new DoctorProfile(body.data[i]);
-
-        $('.showFname').text(profile.firstName);
-        $('.showLname').text(profile.lastName);};
+        profileDisplay += profileTemplate.replace(/{{firstName}}/g, profile.firstName)
+                                         .replace(/{{firstName}}/g, profile.lastName)
+                                         .replace(/{{website}}/g, profile.website)
+                                         .replace(/{{phone}}/g, profile.phone)
 
         for (var p = 0; p < profile.practice.length; p++) {
           let practice = profile.practice[p];
