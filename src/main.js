@@ -10,10 +10,11 @@ $(document).ready(function() {
 
 
     let doctorSearch = new DoctorSearch();
-    let nameSearchResult = doctorSearch.getDoctorByName(name);
+    let nameSearchResult = doctorSearch.getDoctorByName(name)
     // let symptomSearchResult = searchResults.getDoctorBySymptom(symptom);
-    console.log(nameSearchResult);
-    promise.then(function(response) {
+    const apiKey = process.env.API_KEY;
+    console.log(apiKey);
+    nameSearchResult.then(function(response) {
       body = JSON.parse(response);
       // $('.showHumidity').text(`The humidity in ${city} is ${body.main.humidity}%`);
       // $('.showTemp').text(`The temperature in Kelvins is ${body.main.temp} degrees.`);
