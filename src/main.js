@@ -9,13 +9,13 @@ $(document).ready(function() {
     let symptom = $('#symptom').val();
     $('#name').val("");
     $('#symptom').val("");
+    $('#profile').val("");
 
 
     let doctorSearch = new DoctorSearch();
-    let nameSearchResult = doctorSearch.getDoctorByName(name);
+    let nameSearchResult = doctorSearch.getDoctorByName(name, symptom);
     nameSearchResult.then(function(response) {
       let body = JSON.parse(response);
-      console.log(nameSearchResult);
       for (var i = 0; i < body.data.length; i++) {
         let profile = new DoctorProfile(body.data[i]);
 
