@@ -1,21 +1,28 @@
+import "bootstrap";
+import "./styles.css";
 import $ from 'jquery';
 import { DoctorSearch } from './search.js';
 import { DoctorProfile } from './doctor_profile.js';
 
 
 $(document).ready(function() {
+  $('#no-results').hide();
   $('#search').click(function() {
     let name = $('#name').val();
     let symptom = $('#symptom').val();
     $('#name').val("");
     $('#symptom').val("");
-    $('#profile').val("");
 
 
     let doctorSearch = new DoctorSearch();
     let nameSearchResult = doctorSearch.getDoctorByName(name, symptom);
     nameSearchResult.then(function(response) {
       let body = JSON.parse(response);
+      if (body.meta.total == 0) {
+        console.log(body.meta);
+        $('#profile').hide();
+        $('#no-results').show();
+      };
       for (var i = 0; i < body.data.length; i++) {
         let profile = new DoctorProfile(body.data[i]);
 
