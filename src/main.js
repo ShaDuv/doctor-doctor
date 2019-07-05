@@ -1,5 +1,7 @@
 import $ from 'jquery';
 import { DoctorSearch } from './search.js';
+import { DoctorProfile } from './doctor_profile.js';
+
 
 $(document).ready(function() {
   $('#search').click(function() {
@@ -14,8 +16,11 @@ $(document).ready(function() {
     nameSearchResult.then(function(response) {
       let body = JSON.parse(response);
       console.log(nameSearchResult);
-      for (var i = 0; i < body.data.practices.length; i++) {
-        array[i]
+      for (var i = 0; i < body.data.length; i++) {
+        let profile = new DoctorProfile(body.data[i]);
+
+        $('.showFname').text(profile.firstName);
+        $('.showLname').text(profile.lastName);
       }
 
     }, function(error) {
