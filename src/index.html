@@ -11,14 +11,19 @@
     <label for="">Search By Symptom</label>
     <input id="symptom" type="text" name="" value="">
 
+
     <button id="search" type="button" name="button">SEARCH</button>
 
 <div class="container">
 
 <script id="profileTemplate" type="text/template">
-  <div id="profile"class="head " >
-    <div class="showFname">First Name: {{firstName}}</div>
-    <div class="showLname">Last Name: {{lastName}}</div>
+  <div id="profile"class="head bg-info" >
+    <div class="showFname"> <h3 class="name">{{firstName}} {{lastName}}<h3></div>
+  </div>
+</script>
+<script id="phoneTemplate" type="text/template">
+  <div id="phone" >
+    <div class="phone">{{PhoneType}}:{{phone}}</div>
   </div>
 </script>
 
@@ -33,11 +38,6 @@
   </div>
 </script>
 
-<script id="phoneTemplate" type="text/template">
-  <div id="phone" >
-    <div class="phone">{{PhoneType}}:{{phone}}</div>
-  </div>
-</script>
 
 <div id="displayName" class="">
 
