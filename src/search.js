@@ -1,7 +1,7 @@
 export class DoctorSearch {
   getDoctorByName(name, symptom) {
     return new Promise(function(resolve, reject) {
-      const apiKey = process.env.API_KEY;
+      const apiKey = process.env.apiKey;
       let request = new XMLHttpRequest()
       let url = `https://api.betterdoctor.com/2016-03-01/doctors?location=OR&user_key=${apiKey}`;
       if (typeof name !== 'undefined') {
